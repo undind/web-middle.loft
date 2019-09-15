@@ -10,10 +10,19 @@
 }
 
 .fixed-menu__item {
-  &--active {
+  &.active {
     & .fixed-menu__dot {
       border-color: $white;
       box-shadow: 0 0 2px $black;
+      transition: all .4s;
+    }
+  }
+
+  &:hover {
+    & .fixed-menu__dot {
+      border-color: $white;
+      box-shadow: 0 0 2px $black;
+      transition: all .4s;
     }
   }
 }

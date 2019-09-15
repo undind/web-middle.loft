@@ -9,6 +9,10 @@
   left: rem(79px);
   color: $white;
 
+  @include phones {
+    left: rem(25px);
+  }
+
   @include small-phones {
     left: rem(20px);
   }
