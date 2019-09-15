@@ -51,7 +51,7 @@ task('styles', () => {
     .pipe(sass().on('error', sass.logError))
     // .pipe(px2rem())
     .pipe(gulpif(env === 'prod', autoprefixer({
-      browsers: ['last 2 versions'],
+      overrideBrowserslist: ['last 2 versions'],
       cascade: false
     })))
     .pipe(gulpif(env === 'prod', gcmq()))

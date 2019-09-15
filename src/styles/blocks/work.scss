@@ -1,0 +1,140 @@
+.work {
+  background-color: #f8faf9;
+  position: relative;
+
+  &::after {
+    content: '';
+    width: rem(242px);
+    height: rem(264px);
+    position: absolute;
+    right: 0;
+    bottom: -15%;
+    background: url('../img/work/work-bg.png') center center / cover no-repeat;
+  }
+}
+
+.work__title {
+  margin-bottom: rem(50px);
+}
+
+.video__player {
+  width: 100%;
+  position: relative;
+
+  &::after {
+    content: '';
+    width: rem(72px);
+    height: rem(135px);
+    position: absolute;
+    left: -15%;
+    bottom: -13%;
+    background: url('../img/work/work-leaf-left.png') center center / cover no-repeat;
+  }
+
+  &::before {
+    content: '';
+    width: rem(90px);
+    height: rem(77px);
+    position: absolute;
+    right: -13%;
+    top: -14%;
+    background: url('../img/work/work-leaf-right.png') center center / cover no-repeat;
+  }
+}
+
+#video {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.video__player-img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.video__toolbar {
+  width: 100%;
+  height: rem(35px);
+  background-color: #3e3e3e;
+  display: flex;
+  margin-top: -6px;
+}
+
+.duration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding-left: rem(20px);
+}
+
+.duration__img {
+  margin-right: rem(15px);
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  border: 11px solid transparent;
+  border-left-color: #626262;
+  border-right-width: 0;
+  background: transparent;
+  outline: none;
+  transition: all .2s ease-out;
+
+  &.active {
+    border: 7px solid #626262;
+    height: rem(20px);
+    border-top: 0;
+    border-bottom: 0;
+    padding: 2px;
+  }
+}
+
+.sound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: rem(40px);
+  padding-right: rem(20px);
+}
+
+.duration__length {
+  width: 100%;
+  height: 5px;
+  border-radius: 1px;
+  background-color: #626262;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+.duration__length::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #626262;
+  cursor: pointer;
+  width: rem(13px);
+  height: rem(13px);
+  border-radius: 50%;
+}
+
+.duration__length--other {
+  width: rem(58px);
+  height: rem(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sound__mic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(18px);
+  height: rem(22px);
+  cursor: pointer;
+  background: url('../img/icons/volume.svg') center center / cover no-repeat;
+  margin-right: rem(19px);
+}

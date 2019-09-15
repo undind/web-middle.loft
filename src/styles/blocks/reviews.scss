@@ -7,7 +7,8 @@
     background: url('../img/reviews/reviews-bg.png') center center / contain no-repeat;
     position: absolute;
     left: 0;
-    bottom: -16%;
+    bottom: -23%;
+    z-index: 1;
 
     @include phones {
       width: rem(95px);
