@@ -1,0 +1,198 @@
+.reviews {
+  position: relative;
+  &::before {
+    content: '';
+    width: rem(139px);
+    height: rem(321px);
+    background: url('../img/reviews/reviews-bg.png') center center / contain no-repeat;
+    position: absolute;
+    left: 0;
+    bottom: -16%;
+
+    @include phones {
+      width: rem(95px);
+      height: rem(317px);
+      bottom: -19%;
+    }
+  }
+  &__title {
+    margin-bottom: rem(44px);
+  }
+
+  &__list {
+    position: relative;
+    display: flex;
+
+    @include tablets {
+      width: 65%;
+      margin: 0 auto;
+    }
+
+    @include phones {
+      width: 100%;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -27%;
+      right: -7%;
+      width: rem(150px);
+      height: rem(86px);
+      background: url('../img/reviews/berry-rev.png') center center/contain no-repeat;
+
+      @include tablets {
+        right: -35%;
+      }
+
+      @include phones {
+        right: -3%;
+        top: -41%;
+        width: rem(113px);
+        height: rem(79px);
+      }
+
+      @include small-phones {
+        right: -2%;
+        top: -19%;
+        width: rem(103px);
+        height: rem(69px);
+      }
+    }
+  }
+
+  &__content {
+    background: url('../img/bg/reviews-bg.png') center center/cover no-repeat;
+    padding: rem(50px);
+    display: flex;
+    position: relative;
+    min-width: 100%;
+    opacity: 0;
+    transition: opacity .3s;
+
+    &.active {
+      opacity: 1;
+    }
+
+    @include tablets {
+      flex-direction: column;
+      align-items: center;
+      padding: rem(20px);
+    }
+
+    @include phones {
+      padding: rem(15px);
+    }
+
+    @include small-phones {
+      padding: rem(6px);
+    }
+
+    &::after {
+      content: '';
+      display: none;
+  
+      @include tablets {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: rem(25px);
+        width: rem(119px);
+        height: rem(167px);
+        background: url('../img/reviews/reviews-flower.png') center center / cover no-repeat;
+      }
+
+      @include small-phones {
+        width: rem(99px);
+        height: rem(127px);
+      }
+    }
+  }
+
+  &__img {
+    display: block;
+    max-width: 100%;
+  }
+  &__description {
+    margin-left: rem(20px);
+    flex: 2;
+
+    @include tablets {
+      margin-left: 0;
+      text-align: center;
+    }
+  }
+  &__avatars {
+    margin-top: rem(27px);
+    display: flex;
+    justify-content: center;
+  }
+  &__item {
+    margin-right: rem(11px);
+    border: 6px solid transparent;
+    border-radius: 50%;
+    transition: border .3s;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.active {
+      border: 6px solid #0f5a47;
+    }
+  }
+}
+
+.reviews__wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.reviews__photo {
+  @include tablets {
+    margin-top: rem(30px);
+    max-width: rem(204px);
+  }
+
+  @include phones {
+    max-width: rem(122px);
+  }
+}
+
+.description {
+  &__title {
+    color: #323232;
+    font-size: rem(30px);
+    font-family: $medium;
+    margin-top: rem(18px);
+    margin-bottom: rem(25px);
+
+    @include small-phones {
+      margin-bottom: rem(15px);
+      margin-top: rem(10px);
+    }
+  }
+  &__text {
+    color: $grey;
+    margin-bottom: rem(30px);
+    width: 77%;
+
+    @include tablets {
+      width: 100%;
+    }
+
+    @include small-phones {
+      margin-bottom: rem(15px);
+    }
+  }
+  &__author {
+    color: $grey;
+    font-family: $medium;
+  }
+}

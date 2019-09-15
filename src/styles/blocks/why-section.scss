@@ -1,0 +1,150 @@
+.why {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    width: rem(191px);
+    height: rem(314px);
+    background: url('../img/bg/leaves-why.png') center center/cover no-repeat;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include phones {
+      display: none;
+    }
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    width: rem(161px);
+    height: rem(315px);
+    top: 77%;
+    left: 0;
+    background: url('../img/bg/raspberries-why.png') center center/cover no-repeat;
+
+    @include phones {
+      display: none;
+    }
+  }
+  &__title {
+    margin-bottom: rem(13px);
+  }
+  &__desc {
+    text-align: center;
+    width: 45%;
+    margin: 0 auto;
+    color: $grey;
+    font-size: rem(18px);
+    margin-bottom: rem(55px);
+    @include tablets {
+      margin-bottom: rem(20px);
+      width: 55%;
+    }
+
+    @include phones {
+      width: 100%;
+      margin-bottom: rem(40px);
+    }
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    @include tablets {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+.because {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include tablets {
+    width: 65%;
+    margin-bottom: rem(15px);
+  }
+
+  @include phones {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  &:last-child {
+    .because__logo::after {
+      display: none;
+    }
+  }
+  &__logo {
+    width: rem(125px);
+    height: rem(125px);
+    background-color: #f2f5f4;
+    border-radius: 50%;
+    padding: rem(30px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: rem(35px);
+    position: relative;
+    @include tablets {
+      margin-bottom: rem(15px);
+    }
+
+    @include phones {
+      flex-shrink: 0;
+      margin-right: rem(13px);
+      margin-bottom: 0;
+    }
+    &::after {
+      content: '';
+      width: rem(67px);
+      height: rem(21px);
+      background: url('../img/icons/why-dots.png') center bottom / 75% no-repeat;
+      position: absolute;
+      left: 151%;
+      top: 50%;
+      transform: translateY(-50%);
+      @include tablets {
+        display: none;
+      }
+    }
+  }
+  &__img {
+    max-width: 100%;
+  }
+  &__desc {
+    text-align: center;
+  }
+  &__title {
+    color: #000;
+    font-family: $bold;
+    font-size: rem(27px);
+    margin-bottom: rem(25px);
+    @include tablets {
+      margin-bottom: rem(10px);
+    }
+
+    @include phones {
+      text-align: left;
+      margin-bottom: rem(15px);
+    }
+  }
+  &__text {
+    color: $grey;
+    font-family: $light;
+
+    @include phones {
+      text-align: left;
+    }
+  }
+}
+
+.because__icon {
+  fill:#f2f5f4;
+  stroke:#000000;
+  stroke-width:0.75;
+  stroke-miterlimit:10;
+  max-width: 100%;
+}

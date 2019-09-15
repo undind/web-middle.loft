@@ -1,0 +1,174 @@
+.team {
+  position: relative;
+  &::after {
+    content: '';
+    width: rem(196px);
+    height: rem(578px);
+    position: absolute;
+    right: 0;
+    top: -23%;
+    background: url('../img/team/team-bg.png') center center / cover no-repeat;
+
+    @include phones {
+      height: 70%;
+      top: -30%;
+      right: rem(-28px);
+    }
+
+    @include small-phones {
+      right: rem(-75px);
+    }
+  }
+
+  &:before {
+    content: '';
+    width: rem(104px);
+    height: rem(114px);
+    position: absolute;
+    left: 0;
+    bottom: -5%;
+    background: url('../img/team/team-berry.png') center center / cover no-repeat;
+    z-index: 2;
+
+    @include phones {
+      height: rem(70px);
+      width: rem(65px);
+    }
+  }
+}
+
+.team__title {
+  margin-bottom: rem(57px);
+  z-index: 1;
+  position: relative;
+
+  @include tablets {
+    margin-bottom: rem(35px);
+  }
+}
+
+.team__list {
+  display: flex;
+  justify-content: space-between;
+  min-height: rem(480px);
+  z-index: 1;
+  position: relative;
+
+  @include tablets {  
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: rem(-17px);
+  }
+
+  @include phones {
+    justify-content: space-around;
+  }
+
+  @include small-phones {
+    margin-left: 0;
+  }
+}
+
+.team__item {
+  width: 24%;
+  text-align: center;
+
+  @include tablets {
+    width: 34%;
+    margin-left: rem(17px);
+  }
+
+  @include small-phones {
+    width: 40%;
+    margin-left: 0;
+  }
+}
+
+.team__item--active {
+  & .team__position {
+    height: 100%;
+  }
+
+  & .team__author {
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      display: block;
+    }
+  }
+}
+
+.team__picture {
+  margin-bottom: rem(25px);
+
+  @include small-phones {
+    margin-bottom: rem(10px);
+  }
+}
+
+.team__author {
+  display: inline-flex;
+  font-size: rem(21px);
+  font-family: $medium;
+  color: $black;
+  padding-right: rem(18px);
+  margin-bottom: rem(10px);
+  position: relative;
+  white-space: nowrap;
+
+  @include small-phones {
+    margin-bottom: rem(4px);
+  }
+
+  &::after, &::before {
+    content: "";
+		display: block;
+		position: absolute;
+		right: 0;
+		top: rem(9px);
+		width: 0;
+    height: 0;
+  }
+
+  &::before {
+    border-top: rem(7px) solid $green;
+		border-left: rem(5px) solid transparent;
+		border-right: rem(5px) solid transparent;
+		border-bottom: rem(0px) solid transparent;
+		transform: rotate(0deg);
+  }
+
+  &::after {
+    display: none;
+		border-bottom: rem(7px) solid $green;
+		border-left: rem(5px) solid transparent;
+		border-right: rem(5px) solid transparent;
+		border-top: rem(0px) solid transparent;
+  }
+}
+
+.team__img {
+  margin: 0 auto;
+}
+
+.team__position {
+  height: 0;
+  overflow: hidden;
+  transition: height .3s;
+}
+
+.team__position--title {
+  color: #281e1e;
+  margin-bottom: rem(5px);
+}
+
+.team__position--desc {
+  color: $grey;
+  font-family: $light;
+
+  @include small-phones {
+    font-size: rem(16px);
+  }
+}

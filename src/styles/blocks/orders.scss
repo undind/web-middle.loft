@@ -1,0 +1,228 @@
+.orders {
+  background: url('../img/orders/orders-bg.png') center center / cover no-repeat;
+}
+
+.orders__title {
+  color: $green;
+  margin-bottom: rem(55px);
+
+  @include tablets {
+    margin-bottom: rem(44px);
+  }
+
+  @include phones {
+    margin-bottom: rem(36px);
+  }
+
+  @include small-phones {
+    font-size: rem(36px);
+    margin-bottom: rem(6px);
+  }
+}
+
+.form__elem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: $green;
+  margin-right: rem(-20px);
+
+  @include tablets {
+    flex-direction: column;
+    padding: 0 18%;
+  }
+
+  @include phones {
+    padding: 0;
+    margin-right: 0;
+  }
+}
+
+.form__column {
+  width: 50%;
+  margin-right: rem(20px);
+
+  @include tablets {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.form__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: rem(9px);
+
+  @include tablets {
+    justify-content: center;
+    margin-bottom: rem(15px);
+  }
+}
+
+.form__block {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-right: rem(20px);
+  display: block;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &-title {
+    margin-bottom: rem(7px);
+  }
+
+  &--textarea {
+    margin-right: 0;
+  }
+}
+
+.form__input {
+  padding: rem(18px) rem(11px);
+  background-color: $white;
+  width: 100%;
+  border: 3px solid transparent;
+
+  @include phones {
+    padding: rem(17px) rem(11px);
+  }
+
+  @include small-phones {
+    padding: rem(10px) rem(7px);
+  }
+
+  &--textarea {
+    resize: none;
+    height: rem(180px);
+    margin-bottom: rem(35px);
+
+    @include phones {
+      height: rem(105px);
+      margin-bottom: rem(28px);
+    }
+  }
+
+  &:focus {
+    outline: 0;
+    border: 3px solid #dde3bd;
+  }
+}
+
+.form__radio, .form__check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: rem(30px);
+
+  @include small-phones {
+    margin-right: rem(10px);
+  }
+}
+
+.form__radio--fake {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: $white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: rem(10px);
+
+  &::before {
+    content: '';
+    display: block;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+  }
+}
+
+.form__radio--area,
+.form__check--area {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+}
+
+.form__radio--area:checked + .form__radio--fake::before {
+  background-color: $green;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.form__check--fake {
+  content: '';
+  display: block;
+  width: 25px;
+  height: 26px;
+  background-color: $white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: rem(10px);
+  &::before {
+    content: '';
+  }
+}
+
+.form__check--area:checked + .form__check--fake::before {
+  content: '✔';
+  font-size: rem(23px);
+}
+
+.form__buttons {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  font-family: $extra;
+  color: $white;
+  font-size: rem(19px);
+  text-transform: uppercase;
+  padding: rem(18px) rem(35px);
+  border-radius: rem(40px);
+  border: none;
+  cursor: pointer;
+  background-color: $green;
+  margin-right: rem(29px);
+  margin-top: rem(42px);
+  &-reset {
+    border: none;
+    background: transparent;
+    color: $green;
+    cursor: pointer;
+  }
+
+  &-assortment {
+    margin-right: 0;
+    margin-top: 0;
+  }
+
+  @include phones {
+    margin-top: rem(10px);
+  }
+}
