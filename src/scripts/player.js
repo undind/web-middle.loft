@@ -78,9 +78,9 @@ function updateDuration() {
 
 function soundOff() { 
   if (video.volume === 0) {
+    $('.sound__mic').removeClass('not-active');
     video.volume = soundLevel;
     soundControl.value = soundLevel * 10;
-    $('.sound__mic').removeClass('not-active');
   } else {
     $('.sound__mic').addClass('not-active');
     soundLevel = video.volume;

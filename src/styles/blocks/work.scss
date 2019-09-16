@@ -10,6 +10,11 @@
     right: 0;
     bottom: -15%;
     background: url('../img/work/work-bg.png') center center / cover no-repeat;
+
+    @include phones {
+      right: -27%;
+      bottom: -12%;
+    }
   }
 }
 
@@ -29,6 +34,10 @@
     left: -15%;
     bottom: -13%;
     background: url('../img/work/work-leaf-left.png') center center / cover no-repeat;
+
+    @include small-phones {
+      display: none;
+    }
   }
 
   &::before {
@@ -39,6 +48,19 @@
     right: -13%;
     top: -14%;
     background: url('../img/work/work-leaf-right.png') center center / cover no-repeat;
+
+    @include small-phones {
+      display: none;
+    }
+  }
+
+  @include tablets {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  @include phones {
+    width: 90%;
   }
 }
 
@@ -53,6 +75,12 @@
   top: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
+  opacity: 0.9;
+
+  @include phones {
+    width: 49px;
+    height: 71px;
+  }
 }
 
 .video__player-img--active {
@@ -65,6 +93,16 @@
   background-color: #3e3e3e;
   display: flex;
   margin-top: -6px;
+
+  @include tablets {
+    width: 80%;
+    margin: -5px auto 0 auto;
+  }
+
+  @include phones {
+    width: 90%;
+    height: 22px;
+  }
 }
 
 .duration {
@@ -93,6 +131,16 @@
     border-top: 0;
     border-bottom: 0;
     padding: 2px;
+
+    @include phones {
+      border-width: 5px;
+      height: rem(13px);
+    }
+  }
+
+  @include phones {
+    border-width: 8px;
+    margin-right: rem(8px);
   }
 }
 
@@ -102,6 +150,10 @@
   align-items: center;
   padding-left: rem(40px);
   padding-right: rem(20px);
+
+  @include phones {
+    padding-left: rem(25px);
+  }
 }
 
 .duration__length {
@@ -112,6 +164,10 @@
   -webkit-appearance: none;
   appearance: none;
   outline: none;
+
+  @include phones {
+    height: 3px;
+  }
 }
 
 .duration__length::-webkit-slider-thumb {
@@ -122,6 +178,10 @@
   width: rem(13px);
   height: rem(13px);
   border-radius: 50%;
+
+  @include phones {
+    width: rem(8px);
+  }
 }
 
 .duration__length::-moz-range-thumb {
@@ -131,6 +191,11 @@
   height: rem(13px);
   border-radius: 50%;
   border: 0;
+
+  @include phones {
+    width: rem(8px);
+    height: rem(8px);
+  }
 }
 
 .duration__length--other {
@@ -139,6 +204,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include phones {
+    height: 3px;
+  }
 }
 
 .sound__mic {
@@ -152,12 +221,25 @@
   background: url('../img/icons/volume.svg') center center / cover no-repeat;
   margin-right: rem(19px);
 
+  @include phones {
+    width: rem(11px);
+    height: rem(13px);
+  }
+
   &.not-active {
     &::after {
       height: 32px;
+
+      @include phones {
+        height: 20px;
+      }
     }
     &::before {
       height: 32px;
+
+      @include phones {
+        height: 20px;
+      }
     }
   }
 
@@ -173,6 +255,10 @@
     transform: translate(-50%, -50%) rotate(-45deg);
     box-shadow: 0 0 2px #706d6d;
     transition: height .3s ease-out;
+
+    @include phones {
+      width: 2px;
+    }
   }
 
   &::before {
@@ -187,5 +273,9 @@
     transform: translate(-50%, -50%) rotate(45deg);
     box-shadow: 0 0 2px #706d6d;
     transition: height .3s ease-out;
+
+    @include phones {
+      width: 2px;
+    }
   }
 }
