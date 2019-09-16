@@ -55,6 +55,10 @@
   cursor: pointer;
 }
 
+.video__player-img--active {
+  opacity: 0;
+}
+
 .video__toolbar {
   width: 100%;
   height: rem(35px);
@@ -120,6 +124,15 @@
   border-radius: 50%;
 }
 
+.duration__length::-moz-range-thumb {
+  background: #626262;
+  cursor: pointer;
+  width: rem(13px);
+  height: rem(13px);
+  border-radius: 50%;
+  border: 0;
+}
+
 .duration__length--other {
   width: rem(58px);
   height: rem(4px);
@@ -132,9 +145,47 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   width: rem(18px);
   height: rem(22px);
   cursor: pointer;
   background: url('../img/icons/volume.svg') center center / cover no-repeat;
   margin-right: rem(19px);
+
+  &.not-active {
+    &::after {
+      height: 32px;
+    }
+    &::before {
+      height: 32px;
+    }
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 0;
+    background: #626262;
+    position: absolute;
+    top: 50%;
+    left: 63%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    box-shadow: 0 0 2px #706d6d;
+    transition: height .3s ease-out;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 0;
+    background: #626262;
+    position: absolute;
+    top: 50%;
+    left: 63%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    box-shadow: 0 0 2px #706d6d;
+    transition: height .3s ease-out;
+  }
 }
