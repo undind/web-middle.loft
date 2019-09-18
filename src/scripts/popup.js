@@ -2,18 +2,21 @@
   popup();
 
   function popup() { 
-    const popupButton = document.querySelector('.assortment__popup-button');
+    const popupButtons = document.querySelectorAll('.assortment__popup-button');
     
-    popupButton.addEventListener('click', e => {
-      e.preventDefault();
-  
-      if (popupButton.classList.contains('active')) {
-        popupButton.classList.remove('active');
-      } else {
-        popupButton.classList.add('active');
-      }
-      
-    });
+    for (let i = 0; i < popupButtons.length; i++) {
+      popupButtons[i].addEventListener('click', e => {
+        e.preventDefault();
+    
+        if (popupButtons[i].classList.contains('active')) {
+          popupButtons[i].classList.remove('active');
+        } else {
+          popupButtons[i].classList.add('active');
+        }
+        
+      });
+    }
+    
   };
   
 })()
